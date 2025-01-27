@@ -1,0 +1,20 @@
+[project]
+name = "lyric-pro-etls"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pymongo>=4.10.1",
+]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.32.2",
+]
+
+[tool.poe.tasks]
+mongo = "docker compose up -d mongo"
+clean = "docker compose down"
+mongo-connect = "docker run -it --network lyric-pro-etls_lryic_pro_etls_network --rm mongo mongosh --host mongo songs"
+
