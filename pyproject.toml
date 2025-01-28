@@ -5,7 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "beautifulsoup4>=4.12.3",
+    "dateparser>=1.2.0",
+    "pydantic>=2.10.6",
     "pymongo>=4.10.1",
+    "scrapy>=2.12.0",
 ]
 
 [dependency-groups]
@@ -16,5 +20,4 @@ dev = [
 [tool.poe.tasks]
 mongo = "docker compose up -d mongo"
 clean = "docker compose down"
-mongo-connect = "docker run -it --network lyric-pro-etls_lryic_pro_etls_network --rm mongo mongosh --host mongo songs"
-
+mongo-connect = "docker run -it --network lyric-pro-etls_lryic_pro_etls_network --rm mongo mongosh --host lyric-pro-etls-mongo-1 -u root -p example --authenticationDatabase admin lyric_pro_etls"
