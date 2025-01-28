@@ -16,6 +16,8 @@ class GeniusSpider(scrapy.Spider):
             "https://genius.com/Radiohead-creep-lyrics",
             "https://genius.com/King-gizzard-and-the-lizard-wizard-robot-stop-lyrics",
             "https://genius.com/The-beatles-here-comes-the-sun-lyrics",
+            "https://genius.com/Radiohead-fake-plastic-trees-lyrics",
+            "https://genius.com/Dogs-in-a-pile-fenway-lyrics",
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)

@@ -8,5 +8,5 @@ class Song(BaseModel):
     title: str
     artist: str
     lyrics: str
-    release_date: datetime
+    release_date: datetime | None = None
     about: str | None = None
